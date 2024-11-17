@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Reset</title>
+</head>
+<body>
+  <h1>Password Reset</h1>
+  <form id="resetForm">
+    <input id="password" type="password" />
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById('resetForm').addEventListener('submit',async(e)=>{
+      e.preventDefault();
+      const password = document.getElementById('password');
+      if(!password.value) return;
+      try{
+        const res = await fetch(window.location.href,{
+          headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          method:'PATCH',
+          body:JSON.stringify({password:password.value})});
+      }catch(err){
+        console.log(err)
+      }
+      window.location.replace("http://localhost:8080/");//change the url
+    })
+  </script>
+</body>
+</html>

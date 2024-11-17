@@ -1,0 +1,29 @@
+.form-input-cnt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 5%;
+  width: 100%;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  border-bottom: 5px solid rgb(81, 68, 181);
+
+}
+
+.form-input-cnt>label {
+  user-select: none;
+  cursor: pointer;
+  font-size: large;
+}
+
+.form-input-cnt>input,
+#town,
+#role,
+#DOB {
+  padding: 10px;
+  border-radius: 4px;
+  width: 60%;
+  cursor: pointer;
+  user-select: none;
+}
